@@ -449,6 +449,14 @@ module.exports = function (webpackEnv) {
                   isEnvDevelopment &&
                     shouldUseReactRefresh &&
                     require.resolve('react-refresh/babel'),
+                  // START: EVERLONG CHANGES
+                  [
+                    require.resolve('babel-plugin-styled-components'),
+                    {
+                      fileName: false,
+                    },
+                  ],
+                  // END: EVERLONG CHANGES
                 ].filter(Boolean),
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
