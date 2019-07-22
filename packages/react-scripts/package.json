@@ -1,5 +1,5 @@
 {
-  "name": "everlong-react-scripts",
+  "name": "@everlong/react-scripts",
   "version": "4.0.0",
   "description": "Everlong configuration and scripts for Create React App.",
   "repository": {
