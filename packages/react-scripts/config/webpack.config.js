@@ -179,12 +179,6 @@ module.exports = function (webpackEnv) {
     entry:
       isEnvDevelopment && !shouldUseReactRefresh
         ? [
-            // START: EVERLONG CHANGES - FRONTEND-99
-            // this is hopefully a temporary fix for
-            // https://github.com/facebook/create-react-app/issues/8405
-            // from this comment:https://github.com/facebook/create-react-app/issues/8405#issuecomment-582388530
-            './node_modules/core-js/es/object/entries.js',
-            // END: EVERLONG CHANGES - FRONTEND-99
             // Include an alternative client for WebpackDevServer. A client's job is to
             // connect to WebpackDevServer by a socket and get notified about changes.
             // When you save a file, the client will either apply hot updates (in case
@@ -206,15 +200,7 @@ module.exports = function (webpackEnv) {
             // initialization, it doesn't blow up the WebpackDevServer client, and
             // changing JS code would still trigger a refresh.
           ]
-        : [
-            // START: EVERLONG CHANGES - FRONTEND-99
-            // this is hopefully a temporary fix for
-            // https://github.com/facebook/create-react-app/issues/8405
-            // from this comment:https://github.com/facebook/create-react-app/issues/8405#issuecomment-582388530
-            './node_modules/core-js/es/object/entries.js',
-            // END: EVERLONG CHANGES - FRONTEND-99
-            paths.appIndexJs,
-          ],
+        : paths.appIndexJs,
     output: {
       // The build folder.
       path: isEnvProduction ? paths.appBuild : undefined,
