@@ -16,7 +16,7 @@ aliases:
   - &yarn_install
     run: yarn install --frozen-lockfile
 
-version: 2.1
+version:
   publish-package: 
     <<: *defaults
     steps:
